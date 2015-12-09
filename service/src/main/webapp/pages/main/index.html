@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="icon" type="image/x-icon" href="/resources/image/favicon.ico"/>
+<link rel="stylesheet" href="/resources/css/main.css"/>
+<script src="/lib/angular.min.js"></script>
+<script src="IndexController.js"></script>
+<title>pi-controller</title>
+</head>
+<body>
+<div data-ng-app="picontrollerApp" data-ng-controller="indexController">
+	<header>
+		<h3>Pi-Controller</h3>
+	</header>
+	<section>
+		<div id="userInfo">
+			Authenticated user: {{authenticatedUser}}
+		</div>
+		<div id="applicationInfo">
+			Application status: {{healthCheckStatus}}
+		</div>
+	</section>
+	<footer>
+		<br>
+		<i>Access to this website is subject to authentication.</i>
+	</footer>
+</div>
+</body>
+</html>

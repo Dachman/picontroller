@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="icon" type="image/x-icon" href="/pages/resources/image/favicon.ico"/>
+<link rel="stylesheet" href="/resources/css/main.css"/>
+<script src="/lib/angular.min.js"></script>
+<script src="LoginController.js"></script>
+<title>Login page</title>
+</head>
+<body>
+<div data-ng-app="picontrollerApp" data-ng-controller="loginController">
+	<header>
+		<h3>Login</h3>
+	</header>
+	<section>
+		<form novalidate>
+			User name:<br>
+			<input type="text" data-ng-model="user.userName"><br>
+			Password:<br>
+			<input type="password" data-ng-model="user.password">
+			<br>
+			<input type="submit" data-ng-click="authenticate(user)" value="Login">
+			<br>
+			<div><i>{{loginMessage}}</i></div>
+		</form>
+	</section>
+	<footer>
+		<i>Access to this website is subject to authentication.</i>
+	</footer>
+</div>
+</body>
+</html>
