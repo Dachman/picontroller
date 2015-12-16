@@ -7,9 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RestController;
 
-import com.picontroller.home.dao.IUserDao_old;
 import com.picontroller.home.dao.IUserRepository;
 
 @Service("userDetailserviceImpl")

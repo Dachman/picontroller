@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.picontroller.home.dao.IUserDao_old;
 import com.picontroller.home.model.HealthCheckStatus;
 import com.picontroller.home.service.MonitoringService;
 
