@@ -20,8 +20,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 		com.picontroller.home.model.User user = userRepository.getByUserName(userName);
 		if (user != null) {
-			return new User(user.getUserName(), user.getUserPassword(), true, true, true, true,
-					AuthorityUtils.createAuthorityList(user.getUserRole()));
+			return new User(user.getUserName(), user.getUserPassword(), true, true, true, true, AuthorityUtils.createAuthorityList(user.getUserRole()));
 		} else {
 			throw new UsernameNotFoundException("Could not find user " + userName);
 		}

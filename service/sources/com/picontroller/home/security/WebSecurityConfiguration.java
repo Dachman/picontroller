@@ -10,7 +10,7 @@ public class WebSecurityConfiguration extends GlobalAuthenticationConfigurerAdap
 
 	@Autowired
 	UserDetailServiceImpl userDetailServiceImpl;
-	
+
 	@Override
 	public void init(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailServiceImpl);

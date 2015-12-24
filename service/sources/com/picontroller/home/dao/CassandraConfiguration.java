@@ -16,33 +16,34 @@ import com.picontroller.home.properties.DatabaseProperties;
 
 /**
  * Cassandra database initialization.
+ * 
  * @author dcharles
  */
 @Configuration
-@EnableCassandraRepositories(basePackages = {"com.picontroller.home.dao"})
+@EnableCassandraRepositories(basePackages = { "com.picontroller.home.dao" })
 public class CassandraConfiguration extends AbstractCassandraConfiguration {
 
 	@Autowired
 	DatabaseProperties databaseProperties;
-	
-    @Bean
-    @Override
-    public CassandraClusterFactoryBean cluster() {
-        CassandraClusterFactoryBean cluster = new CassandraClusterFactoryBean();
-        cluster.setContactPoints(databaseProperties.getHost());
-        cluster.setPort(databaseProperties.getPort());
-        return cluster;
-    }
 
-    @Override
-    protected String getKeyspaceName() {
-        return databaseProperties.getKeyspace();
-    }
+	@Bean
+	@Override
+	public CassandraClusterFactoryBean cluster() {
+		CassandraClusterFactoryBean cluster = new CassandraClusterFactoryBean();
+		cluster.setContactPoints(databaseProperties.getHost());
+		cluster.setPort(databaseProperties.getPort());
+		return cluster;
+	}
 
-    @Bean
-    @Override
-    public CassandraMappingContext cassandraMapping() throws  ClassNotFoundException {
-         return new BasicCassandraMappingContext();
-    }
+	@Override
+	protected String getKeyspaceName() {
+		return databaseProperties.getKeyspace();
+	}
+
+	@Bean
+	@Override
+	public CassandraMappingContext cassandraMapping() throws ClassNotFoundException {
+		return new BasicCassandraMappingContext();
+	}
 
 }

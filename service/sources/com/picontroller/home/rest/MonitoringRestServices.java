@@ -10,18 +10,19 @@ import com.picontroller.home.service.MonitoringService;
 
 /**
  * Monitoring services exposed through Rest.
+ * 
  * @author dcharles
  */
 
 @RestController
-public class MonitoringRestServices implements IMonitoringRestService{
+public class MonitoringRestServices implements IMonitoringRestService {
 
 	@Autowired
 	MonitoringService monitoringService;
-	
+
 	@Override
 	@RequestMapping("/ping")
-	public @ResponseBody String ping(){
+	public @ResponseBody String ping() {
 		return "OK";
 	}
 
@@ -30,5 +31,5 @@ public class MonitoringRestServices implements IMonitoringRestService{
 	public @ResponseBody HealthCheckStatus healthCheck() {
 		return monitoringService.healthCheck();
 	}
-	
+
 }

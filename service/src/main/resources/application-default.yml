@@ -14,5 +14,6 @@ sim:
     gatewayName: DW5550
     gatewayPort: COM3
     gatewayBaudRate: 921600
-    smscNumber: +33660660001
+    smscNumber: #Not needed with Bouygues
     simPin: 1903
+    forwardToNumber: +33671285988

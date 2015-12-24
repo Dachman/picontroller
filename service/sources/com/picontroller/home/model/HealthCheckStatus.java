@@ -5,38 +5,40 @@ import java.util.Date;
 
 /**
  * Health check status representation.
+ * 
  * @author dcharles
  *
  */
-public class HealthCheckStatus implements Serializable{
+public class HealthCheckStatus implements Serializable {
 
 	/** serialVersionUID */
 	private static final long serialVersionUID = -1834332818091710620L;
-	
+
 	/**
 	 * Status enum
+	 * 
 	 * @author dcharles
 	 *
 	 */
 	enum Status {
-		OK ("OK"),
-		KO ("KO");
-		
+		OK("OK"), KO("KO");
+
 		private final String stringValue;
-		Status(String value){
-			this.stringValue=value;
+
+		Status(String value) {
+			this.stringValue = value;
 		}
-		
-		public String getStringValue(){
+
+		public String getStringValue() {
 			return stringValue;
 		}
 	}
-	
-	/**Date of the request.*/
+
+	/** Date of the request. */
 	private Date requestDate;
-	/** Actual status*/
+	/** Actual status */
 	private Status status;
-	
+
 	/**
 	 * Constructor;
 	 */
@@ -44,19 +46,21 @@ public class HealthCheckStatus implements Serializable{
 		requestDate = new Date();
 		status = Status.OK;
 	}
+
 	public Date getRequestDate() {
 		return requestDate;
 	}
+
 	public void setRequestDate(Date requestDate) {
 		this.requestDate = requestDate;
 	}
+
 	public Status getStatus() {
 		return status;
 	}
+
 	public void setStatus(Status status) {
 		this.status = status;
 	}
-	
-	
-	
+
 }

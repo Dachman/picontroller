@@ -14,7 +14,7 @@ class UserCredentials {
 		this.userName = "";
 		this.password = "";
 	}
-	
+
 	public String getUserName() {
 		return userName;
 	}

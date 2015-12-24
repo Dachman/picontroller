@@ -8,7 +8,7 @@ import com.picontroller.home.model.User;
 
 @Repository
 public interface IUserRepository extends CassandraRepository<User> {
-		
+
 	@Query("Select * from user where userName=?0")
 	User getByUserName(String userName);
 

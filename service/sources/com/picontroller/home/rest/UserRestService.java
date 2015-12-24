@@ -28,7 +28,7 @@ public class UserRestService implements IUserRestService {
 	UserService userService;
 
 	@Override
-	@RequestMapping(method=RequestMethod.POST, value = "/user/authenticate")
+	@RequestMapping(method = RequestMethod.POST, value = "/user/authenticate")
 	public @ResponseBody User authenticate(@RequestBody Map<String, String> parameters) throws Exception {
 		log.info("Authenticating user " + parameters.get("userName") + " through Rest.");
 		try {
@@ -39,9 +39,9 @@ public class UserRestService implements IUserRestService {
 	}
 
 	@Override
-	@RequestMapping(method=RequestMethod.GET, value = "/user/authenticated")
+	@RequestMapping(method = RequestMethod.GET, value = "/user/authenticated")
 	public @ResponseBody User getAuthenticatedUser() {
 		return userService.getAuthenticatedUser();
 	}
-	
+
 }

@@ -10,9 +10,9 @@ import com.picontroller.home.service.IMonitoringService;
  * @author dcharles
  *
  */
-public interface IMonitoringRestService extends IMonitoringService{
+public interface IMonitoringRestService extends IMonitoringService {
 
 	String ping();
-	
+
 	HealthCheckStatus healthCheck();
 }
