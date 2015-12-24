@@ -1,0 +1,18 @@
+#To be run via -Dspring.profiles.active=prod for production or no argument otherwise
+# ** Remember to install rxtx.jar as per http://smslib.org/doc/installation/#Java_Communications_Library to make the smslib library working
+#    For windows 64 bits : http://jlog.org/rxtx-win.html
+
+#Database
+database:
+    host: localhost
+    port: 9042
+    keyspace: picontroller
+
+#SIM card
+sim:
+    gatewayManufacturer: Dell
+    gatewayName: DW5550
+    gatewayPort: COM3
+    gatewayBaudRate: 921600
+    smscNumber: +33660660001
+    simPin: 1903
