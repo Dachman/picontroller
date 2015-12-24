@@ -40,7 +40,7 @@ public class SMSInboundNotification implements IInboundMessageNotification {
 
 			// Forward the message received.
 			if (simProperties.getForwardToNumber() != null && !simProperties.getForwardToNumber().isEmpty()) {
-				simCardService.sendSMS(simProperties.getForwardToNumber(), "From: " + message.getOriginator() + " Message:" + message.getText());
+				simCardService.sendSMS(simProperties.getForwardToNumber(), "From: +" + message.getOriginator() + " Message:" + message.getText());
 				// Delete the message.
 				try {
 					gateway.deleteMessage(message);
