@@ -32,10 +32,10 @@ public class UserService implements IUserSevice {
 
 	@Override
 	public User getByUserName(String userName) {
-		log.debug("Looking for user" + userName + " (userName).");
+		log.debug("Looking for user " + userName + " (userName).");
 		final User user = userRepository.getByUserName(userName);
 		if (user == null) {
-			log.info("User" + userName + " not found.");
+			log.info("User " + userName + " not found.");
 		}
 		return user;
 	}
@@ -45,7 +45,7 @@ public class UserService implements IUserSevice {
 		log.debug("Looking for user" + userId + " (userId).");
 		final User user = userRepository.getByUserId(userId);
 		if (user == null) {
-			log.info("User" + userId + " not found.");
+			log.info("User " + userId + " not found.");
 		}
 		return user;
 	}
@@ -53,7 +53,7 @@ public class UserService implements IUserSevice {
 	@Override
 	public User getAuthenticatedUser() {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		log.debug("Getting authenticated user" + auth.getName() + " (userName).");
+		log.debug("Getting authenticated user " + auth.getName() + " (userName).");
 		return getByUserName(auth.getName());
 	}
 }

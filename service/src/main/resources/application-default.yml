@@ -1,6 +1,8 @@
 #To be run via -Dspring.profiles.active=prod for production or no argument otherwise
 # ** Remember to install rxtx.jar as per http://smslib.org/doc/installation/#Java_Communications_Library to make the smslib library working
-#    For windows 64 bits : http://jlog.org/rxtx-win.html
+#    For windows 64 bits : http://jlog.org/rxtx-win.html or http://fizzed.com/oss/rxtx-for-java
+#    If using a JDK, copy also the files RXTX files to %JDK_HOME%/lib/ext and %JDK_HOME%/bin
+#    Execution : java - jar service-1.0.jar
 
 #Database
 database:

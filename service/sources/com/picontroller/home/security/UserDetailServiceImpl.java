@@ -22,7 +22,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
 		if (user != null) {
 			return new User(user.getUserName(), user.getUserPassword(), true, true, true, true, AuthorityUtils.createAuthorityList(user.getUserRole()));
 		} else {
-			throw new UsernameNotFoundException("Could not find user " + userName);
+			throw new UsernameNotFoundException("Could not find user " + userName + ".");
 		}
 	}
 
