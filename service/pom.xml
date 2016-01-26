@@ -55,6 +55,12 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>com.github.sarxos</groupId>
+			<artifactId>webcam-capture</artifactId>
+			<version>0.3.10</version>
+		</dependency>
+
 		<!-- <dependency> <groupId>com.pi4j</groupId> <artifactId>pi4j-core</artifactId> 
 			</dependency> -->
 	</dependencies>
@@ -111,7 +117,7 @@
 				<configuration>
 					<archive>
 						<manifestEntries>
-							<!--  <Main-Class>org.springframework.boot.loader.JarLauncher</Main-Class>-->
+							<!-- <Main-Class>org.springframework.boot.loader.JarLauncher</Main-Class> -->
 							<Start-Class>com.picontroller.Application</Start-Class>
 						</manifestEntries>
 					</archive>
