@@ -12,4 +12,8 @@ public interface IWebcamProperties {
 
 	String getPath();
 
+	String getFacesPath();
+
+	String getFaceDetectionClassifierName();
+
 }

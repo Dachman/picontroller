@@ -12,7 +12,6 @@ import org.smslib.modem.SerialModemGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.picontroller.home.properties.ISimProperties;
-import com.picontroller.home.service.util.SMSInboundNotification;
 
 @org.springframework.stereotype.Service("simCardService")
 public class SIMCardService implements ISIMCardService {
@@ -30,27 +29,29 @@ public class SIMCardService implements ISIMCardService {
 
 	@PostConstruct
 	private void InitializeSIMCardService() {
-		try {
-			log.info("Initializing the gateway to the mobile network with the parameters: Port:" + simProperties.getGatewayPort() + ", BaudRate:" + simProperties
-					.getGatewayBaudRate() + ", Manufacturer:" + simProperties.getGatewayManufacturer() + ", Gateway name:" + simProperties.getGatewayName() + ".");
 
-			gateway = new SerialModemGateway(simProperties.getGatewayManufacturer(), simProperties.getGatewayPort(), simProperties.getGatewayBaudRate(), simProperties.getGatewayManufacturer(),
-					simProperties.getGatewayName());
+		if (!simProperties.getGatewayName().equals(""))
+			try {
+				log.info("Initializing the gateway to the mobile network with the parameters: Port:" + simProperties.getGatewayPort() + ", BaudRate:" + simProperties
+						.getGatewayBaudRate() + ", Manufacturer:" + simProperties.getGatewayManufacturer() + ", Gateway name:" + simProperties.getGatewayName() + ".");
 
-			gateway.setSmscNumber(simProperties.getSmscNumber());
-			gateway.setSimPin(simProperties.getSimPin());
-			gateway.setProtocol(Protocols.PDU);
-			gateway.setInbound(true);
-			gateway.setOutbound(true);
-			initInboundMessageNotification();
+				gateway = new SerialModemGateway(simProperties.getGatewayManufacturer(), simProperties.getGatewayPort(), simProperties.getGatewayBaudRate(), simProperties.getGatewayManufacturer(),
+						simProperties.getGatewayName());
 
-			Service.getInstance().addGateway(gateway);
-			Service.getInstance().startService();
-			log.info("Gateway initialized. SMScNumber is " + gateway.getSmscNumber() + ", PIN is " + gateway.getSimPin() + ".");
-		} catch (Exception e) {
-			log.error(e.getMessage(), e);
-		}
+				gateway.setSmscNumber(simProperties.getSmscNumber());
+				gateway.setSimPin(simProperties.getSimPin());
+				gateway.setProtocol(Protocols.PDU);
+				gateway.setInbound(true);
+				gateway.setOutbound(true);
+				initInboundMessageNotification();
 
+				Service.getInstance().addGateway(gateway);
+				Service.getInstance().startService();
+				log.info("Gateway initialized. SMScNumber is " + gateway.getSmscNumber() + ", PIN is " + gateway.getSimPin() + ".");
+
+			} catch (Exception e) {
+				log.error(e.getMessage(), e);
+			}
 	}
 
 	/**

@@ -18,6 +18,8 @@ public class WebcamProperties implements IWebcamProperties {
 	private int width;
 	private int height;
 	private String path;
+	private String facesPath;
+	private String faceDetectionClassifierName;
 
 	@Override
 	public int getWidth() {
@@ -55,6 +57,24 @@ public class WebcamProperties implements IWebcamProperties {
 
 	public void setDimension(Map<String, Integer> dimension) {
 		this.dimension = dimension;
+	}
+
+	@Override
+	public String getFacesPath() {
+		return facesPath;
+	}
+
+	public void setFacesPath(String facesPath) {
+		this.facesPath = facesPath;
+	}
+
+	@Override
+	public String getFaceDetectionClassifierName() {
+		return faceDetectionClassifierName;
+	}
+
+	public void setFaceDetectionClassifierName(String faceDetectionClassifierName) {
+		this.faceDetectionClassifierName = faceDetectionClassifierName;
 	}
 
 }

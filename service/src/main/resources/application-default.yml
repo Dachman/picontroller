@@ -16,7 +16,7 @@ database:
 #SIM card
 sim:
     gatewayManufacturer: Dell
-    gatewayName: DW5550
+    gatewayName: #DW5550
     gatewayPort: COM3
     gatewayBaudRate: 921600
     smscNumber: #Not needed with Bouygues
@@ -29,3 +29,5 @@ webcam:
         width: 640
         height: 480
     path: C:/tmp/shots/
+    facesPath : C:/tmp/shots/faces/
+    faceDetectionClassifierName: haarcascade_frontalface_alt.xml

@@ -13,5 +13,12 @@ public interface IWecamRestService {
 	 * @return true if succeed.
 	 */
 	boolean takeAShot();
+	
+	/**
+	 * Get a face.
+	 * @param name Name associated to the face
+	 * @return true if succeed.
+	 */
+	boolean getFace(String name);
 
 }
