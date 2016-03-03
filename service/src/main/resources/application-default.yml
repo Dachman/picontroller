@@ -30,4 +30,6 @@ webcam:
         height: 480
     path: C:/tmp/shots/
     facesPath : C:/tmp/shots/faces/
+    predictedFacesPath: C:/tmp/shots/predicted/faces/
+    predictedImagesPath: C:/tmp/shots/predicted/images/
     faceDetectionClassifierName: haarcascade_frontalface_alt.xml

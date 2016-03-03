@@ -35,4 +35,20 @@ public class WebcamService implements IWebcamService {
 		return webcamManager.saveFaces(name, webcamManager.getFaces(webcamManager.getImagefromWebcam()));
 	}
 
+	@Override
+	public String predictFace(){
+		return webcamManager.predictFace();
+	}
+	
+	@Override
+	public boolean learnFaces(){
+		return webcamManager.learnFaces();
+	}
+	
+
+	@Override
+	public String predictFacesFromSample() {
+		return webcamManager.predictFacesFromSample();
+	}
+	
 }

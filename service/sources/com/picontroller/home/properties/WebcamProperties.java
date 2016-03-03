@@ -19,6 +19,8 @@ public class WebcamProperties implements IWebcamProperties {
 	private int height;
 	private String path;
 	private String facesPath;
+	private String predictedFacesPath;
+	private String predictedImagesPath;
 	private String faceDetectionClassifierName;
 
 	@Override
@@ -64,8 +66,8 @@ public class WebcamProperties implements IWebcamProperties {
 		return facesPath;
 	}
 
-	public void setFacesPath(String facesPath) {
-		this.facesPath = facesPath;
+	public void setPredictedImagesPath(String predictedImagesPath) {
+		this.predictedImagesPath = predictedImagesPath;
 	}
 
 	@Override
@@ -75,6 +77,24 @@ public class WebcamProperties implements IWebcamProperties {
 
 	public void setFaceDetectionClassifierName(String faceDetectionClassifierName) {
 		this.faceDetectionClassifierName = faceDetectionClassifierName;
+	}
+
+	@Override
+	public String getPredictedFacesPath() {
+		return predictedFacesPath;
+	}
+
+	@Override
+	public String getPredictedImagesPath() {
+		return predictedImagesPath;
+	}
+
+	public void setFacesPath(String facesPath) {
+		this.facesPath = facesPath;
+	}
+
+	public void setPredictedFacesPath(String predictedFacesPath) {
+		this.predictedFacesPath = predictedFacesPath;
 	}
 
 }

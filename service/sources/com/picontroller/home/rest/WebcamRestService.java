@@ -27,9 +27,32 @@ public class WebcamRestService implements IWecamRestService {
 	}
 
 	@Override
+	@RequestMapping("/predictFace")
+	public @ResponseBody String predictFace() {
+		return webcamService.predictFace();
+	}
+
+	@Override
 	@RequestMapping("/getFace/{name}")
 	public @ResponseBody boolean getFace(@PathVariable String name) {
 		return webcamService.captureFace(name);
+	}
+
+	@Override
+	@RequestMapping("/learnFaces")
+	public @ResponseBody boolean learnFaces() {
+		return webcamService.learnFaces();
+	}
+
+	/**
+	 * Predict a name for each samples in the faces path.
+	 * 
+	 * @return the corresponding names.
+	 */
+	@Override
+	@RequestMapping("/predictFacesFromSample")
+	public @ResponseBody String predictFacesFromSample() {
+		return webcamService.predictFacesFromSample();
 	}
 
 }
