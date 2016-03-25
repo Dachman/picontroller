@@ -20,4 +20,10 @@ public interface IWebcamProperties {
 
 	String getFaceDetectionClassifierName();
 
+	String getPredictedTextImagesPath();
+	
+	String getTextReaderTrainingDataPath();
+
+	Integer getAuthenticationConfidenceFactor();
+
 }

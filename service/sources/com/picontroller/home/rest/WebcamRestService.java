@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.picontroller.home.model.User;
 import com.picontroller.home.service.IWebcamService;
 
 /**
@@ -28,7 +29,7 @@ public class WebcamRestService implements IWecamRestService {
 
 	@Override
 	@RequestMapping("/predictFace")
-	public @ResponseBody String predictFace() {
+	public @ResponseBody String[] predictFace() {
 		return webcamService.predictFace();
 	}
 
@@ -55,4 +56,28 @@ public class WebcamRestService implements IWecamRestService {
 		return webcamService.predictFacesFromSample();
 	}
 
+	@Override
+	@RequestMapping("/readText")
+	public @ResponseBody String readText() {
+		return webcamService.readText();
+	}
+
+	@Override
+	@RequestMapping("/startCapture")
+	public @ResponseBody boolean startCapture() {
+		return webcamService.startCapture();
+	}
+
+	@Override
+	@RequestMapping("/stopCapture")
+	public @ResponseBody boolean stopCapture() {
+		return webcamService.stopCapture();
+	}
+
+	@Override
+	@RequestMapping("/authenticate")
+	public @ResponseBody String authenticate() {
+		return webcamService.authenticate().toString();
+	}
+	
 }

@@ -1,5 +1,7 @@
 package com.picontroller.home.rest;
 
+import com.picontroller.home.model.User;
+
 /**
  * Webcam rest services interface.
  * 
@@ -29,7 +31,7 @@ public interface IWecamRestService {
 	 * 
 	 * @return the name found.
 	 */
-	String predictFace();
+	String[] predictFace();
 
 	/**
 	 * Start learning stored faces.
@@ -44,5 +46,32 @@ public interface IWecamRestService {
 	 * @return the corresponding names.
 	 */
 	String predictFacesFromSample();
+
+	/**
+	 * Read a text from the captured image.
+	 * 
+	 * @return the text read.
+	 */
+	String readText();
+
+	/**
+	 * Start capturing from the webcam.
+	 * 
+	 * @return true if succeeded.
+	 */
+	boolean startCapture();
+
+	/**
+	 * Stop the image capture.
+	 * 
+	 * @return true if succeeded.
+	 */
+	boolean stopCapture();
+
+	/**
+	 * Authenticate a user using face recognition.
+	 * @return the authenticated user.
+	 */
+	String authenticate();
 
 }

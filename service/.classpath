@@ -11,7 +11,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JDK8">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
@@ -33,5 +33,10 @@
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/DEV/opencv/build/java/x64"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/DEV/JAVA/LIB/Tess4J/dist/tess4j-3.0.jar"/>
+	<classpathentry kind="lib" path="C:/DEV/JAVA/LIB/Tess4J/lib/jna.jar"/>
+	<classpathentry kind="lib" path="C:/DEV/JAVA/LIB/Tess4J/lib/jai_imageio.jar"/>
+	<classpathentry kind="lib" path="C:/DEV/JAVA/LIB/Tess4J/lib/lept4j-1.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/DEV/JAVA/LIB/Tess4J/lib/commons-io-2.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

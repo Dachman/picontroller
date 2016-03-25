@@ -21,7 +21,10 @@ public class WebcamProperties implements IWebcamProperties {
 	private String facesPath;
 	private String predictedFacesPath;
 	private String predictedImagesPath;
+	private String predictedTextImagesPath;
+	private String textReaderTrainingDataPath;
 	private String faceDetectionClassifierName;
+	private Integer authenticationConfidenceFactor;
 
 	@Override
 	public int getWidth() {
@@ -95,6 +98,29 @@ public class WebcamProperties implements IWebcamProperties {
 
 	public void setPredictedFacesPath(String predictedFacesPath) {
 		this.predictedFacesPath = predictedFacesPath;
+	}
+
+	@Override
+	public String getPredictedTextImagesPath() {
+		return predictedTextImagesPath;
+	}
+
+	public void setPredictedTextImagesPath(String predictedTextImagesPath) {
+		this.predictedTextImagesPath = predictedTextImagesPath;
+	}
+
+	@Override
+	public String getTextReaderTrainingDataPath() {
+		return textReaderTrainingDataPath;
+	}
+
+	@Override
+	public Integer getAuthenticationConfidenceFactor() {
+		return authenticationConfidenceFactor;
+	}
+
+	public void setAuthenticationConfidenceFactor(Integer authenticationConfidenceFactor) {
+		this.authenticationConfidenceFactor = authenticationConfidenceFactor;
 	}
 
 }

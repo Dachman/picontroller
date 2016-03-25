@@ -1,5 +1,7 @@
 package com.picontroller.home.service;
 
+import com.picontroller.home.model.User;
+
 /**
  * Interface for handling the webcam.
  * 
@@ -27,9 +29,9 @@ public interface IWebcamService {
 	/**
 	 * Predict the name related to the face captured.
 	 * 
-	 * @return the name found.
+	 * @return the names found.
 	 */
-	String predictFace();
+	String[] predictFace();
 
 	/**
 	 * Start learning stored faces.
@@ -44,4 +46,32 @@ public interface IWebcamService {
 	 * @return the corresponding names.
 	 */
 	String predictFacesFromSample();
+
+	/**
+	 * Read a text from the captured image.
+	 * 
+	 * @return the text read.
+	 */
+	String readText();
+
+	/**
+	 * Start capturing from the webcam.
+	 * 
+	 * @return true if succeeded.
+	 */
+	boolean startCapture();
+
+	/**
+	 * Stop the image capture.
+	 * 
+	 * @return true if succeeded.
+	 */
+	boolean stopCapture();
+
+	/**
+	 * Authenticate a user using face recognition.
+	 * @return the name of the recognized user or null if not recognized.
+	 */
+	User authenticate();
+
 }

@@ -1,8 +1,8 @@
 package com.picontroller.home.model;
 
-import org.springframework.data.cassandra.mapping.Column;
-import org.springframework.data.cassandra.mapping.PrimaryKey;
-import org.springframework.data.cassandra.mapping.Table;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  * User entity.
@@ -10,24 +10,28 @@ import org.springframework.data.cassandra.mapping.Table;
  * @author dcharles
  *
  */
-@Table
+@Entity
 public class User {
 
-	@PrimaryKey
+	@Id
+	@GeneratedValue
 	private Integer userId;
-	@Column
 	private String userName;
-	@Column
 	private String userPassword;
-	@Column
 	private String userRole;
 
 	public User(Integer userId, String userName, String userPassword, String userRole) {
-		super();
 		this.userId = userId;
 		this.userName = userName;
 		this.userPassword = userPassword;
 		this.setUserRole(userRole);
+	}
+
+	public User() {
+		this.userId = 0;
+		this.userName = "";
+		this.userPassword = "";
+		this.setUserRole("");
 	}
 
 	public Integer getUserId() {

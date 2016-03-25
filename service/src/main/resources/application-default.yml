@@ -7,11 +7,14 @@
 #Server
 server.port: 8090
 
-#Database
-database:
-    host: localhost
-    port: 9042
-    keyspace: picontroller
+# DataSource
+spring:
+    datasource:
+        url: jdbc:hsqldb:file:./db
+        username: sa
+    jpa:
+        show-sql: false
+        hibernate.ddl-auto: update
 
 #SIM card
 sim:
@@ -32,4 +35,8 @@ webcam:
     facesPath : C:/tmp/shots/faces/
     predictedFacesPath: C:/tmp/shots/predicted/faces/
     predictedImagesPath: C:/tmp/shots/predicted/images/
+    predictedTextImagesPath: C:/tmp/shots/predicted/texts/
+    textReaderTrainingDataPath: C:/Progra~2/Tesseract-OCR/tessdata
+    #C:/DEV/JAVA/LIB/Tess4J/tessdata
     faceDetectionClassifierName: haarcascade_frontalface_alt.xml
+    authenticationConfidenceFactor: 3

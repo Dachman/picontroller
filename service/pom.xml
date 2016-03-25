@@ -24,10 +24,17 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+		<!-- <dependency> <groupId>org.springframework.data</groupId> <artifactId>spring-data-cassandra</artifactId> 
+			</dependency> -->
 		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-cassandra</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
@@ -55,11 +62,8 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Not working, import jars directly in the buildpath dependency>
-			<groupId>org.bytedeco</groupId>
-			<artifactId>javacv</artifactId>
-			<version>1.1</version>
-		</dependency-->
+		<!-- Not working, import jars directly in the buildpath dependency> <groupId>org.bytedeco</groupId> 
+			<artifactId>javacv</artifactId> <version>1.1</version> </dependency -->
 
 		<!-- <dependency> <groupId>com.pi4j</groupId> <artifactId>pi4j-core</artifactId> 
 			</dependency> -->
